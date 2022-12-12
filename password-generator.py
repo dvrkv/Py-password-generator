@@ -1,6 +1,8 @@
+# Imports
 import random
 
-print('*****Password Generator*****')
+# Program name
+print('*****PASSWORD GENERATOR*****')
 
 # Character source
 lowercase = 'abcdefghijklmnopqrstuvwxyz'
@@ -11,21 +13,29 @@ symbols = '!@#$%^&*().,?'
 # Combined variable
 chars = lowercase + uppercase + numbers + symbols
 
-#def is_int(n):
-#    if isinstance(n, int):
-#        print(True)
-#    else:
-#        print(False)
+# Reading the number of passwords from the console and handling errors
+success1 = False
+while not success1:
+    try:
+        number = input('Enter the number of passwords to generate: ')
+        number = int(number)
+        success1 = True
+    except ValueError:
+        number = input('OOPS! YOU SHOULD ENTER ONLY POSITIVE NUMBER. TRY AGAIN...: ')
+        number = int(number)
+        success1 = True
 
-# How many passwords should program generate
-number = input('Amount of passwords to generate: ')
-# Convert string to integer
-number = int(number)
-
-# Length of each password
-length = input('Password length: ')
-# Convert string to integer
-length = int(length)
+# Reading the length of each password from the console and handling errors
+success2 = False
+while not success2:
+    try:
+        length = input('Password length: ')
+        length = int(length)
+        success2 = True
+    except ValueError:
+        length = input('OOPS! YOU SHOULD ENTER ONLY POSITIVE NUMBER. TRY AGAIN...: ')
+        length = int(number)
+        success2 = True
 
 # Print result
 print('Here are your passwords: ')
